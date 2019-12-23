@@ -1,0 +1,49 @@
+
+<body>
+
+//STARTQUIZ Page 1
+
+    <main role="main" class="container">
+        <header role="banner" class="header">
+            <h1>What Do We Know About Our Planet?</h1>
+            <ul>
+                <li class="askIt">Question:<span class="numberOfQuestions">0</span>/10</li>
+                <li class="askIt">Score:<span class="score">0</span> </li>
+            </ul>
+        </header>
+        <section role="globe" class="globus">
+            <section class="startQuiz boxEs">
+                <h2>Let's find it out!</h2>
+                <button type="button" class="startButton">Start</button>
+            </section>
+
+           
+//QUESTIONBOX Page 2
+
+<section class= "questionBox boxEs"></section>
+$('.questionBox').html('<form id="question">'
+    + '<p>'
+    + STORE[currentQuestion].question
+    + '</p><br>'
+    + STORE[currentQuestion].answers.map((answer) => {
+        return `<input type="radio" name="ans" value="${answer}"> ${answer}<br>`
+    }).join('')
+    + '<button type="button" class="check">Submit</button></form>');
+
+
+//FEEDBACKBOX Page 3
+<section class = "feedbackBox boxEs"></section>
+if {
+$('.feedbackBox').html(
+            `<h3>Correct!</h3> <br><button type="submit" class="nextButton">Next</button></form>`
+        );
+
+    } else {
+        $('.feedbackBox').html(
+            `<h3>Wrong!</h3><br>type="submit" class="nextButton">Next</button></form>`);
+
+            
+//FINALRESULTBOX Page 4
+<section class = "finalResultBox boxEs"></section>
+$('.finalResultBox').html(`<h3>You've got ${score} / 10</h3><br>`
+        + '<button type="submit" class="reStart">Restart</button></form>');
